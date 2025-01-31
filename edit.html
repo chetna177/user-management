@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management</title>
+    <link rel="stylesheet" href="./edit.css" />
+  </head>
+  <body>
+    <nav>
+      <section class="left-part">
+        <div id="name">User Management</div>
+      </section>
+      <section class="right-part">
+        <a href="./index.html"
+          >Home
+          <div id="hidden-content">View</div></a
+        ><a href="./view.html"
+          >Add
+          <div id="hidden-content">Add</div></a
+        >
+        <a href="./add.html"
+          >Add
+          <div id="hidden-content">User</div></a
+        ><a href="./edit.html"
+          >Edit
+          <div id="hidden-content">User</div></a
+        >
+      </section>
+    </nav>
+    <section class="edit-form">
+      <form action=" " method="post" id="forms">
+        <h1>Edit Users</h1>
+        <br />
+        <label for="id"> Enter your ID :</label><br />
+        <input type="text" id="id" placeholder="eg. 12" name="idno" /><br /><br />
+        <label for="name">Enter your full name :</label><br />
+        <input
+          type="text"
+          id="name"
+          placeholder="eg.Chetna Sahu"
+          name="name"
+        /><br /><br /><br />
+        <label for="email">Enter Your Email Id :</label><br />
+        <input
+          type="email"
+          placeholder="chetna111@gmail.com"
+          name="email"
+        /><br /><br />
+        <label for="department">Enter Your Department :</label><br />
+        <input type="text" name="department" /><br /><br />
+        <button type="submit" id="btn">Edit User</button>
+      </form>
+    </section>
+
+    <script src="./edit.js" type="module"></script>
+  </body>
+</html>
