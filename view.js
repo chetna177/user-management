@@ -3,7 +3,9 @@ let nav = document.getElementsByTagName("nav");
 let text = (div.textContent =
   "Error not being able fetch the request Error(404)!");
 let table = document.getElementById("userslist");
-
+//creating button for each row
+let btn = document.createElement("button");
+btn.textContent = "Delete";
 //fetching the data from api
 async function getData() {
   let res = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -58,6 +60,10 @@ function createTable(data) {
     let fname = names[0];
     let lname = names[1];
 
+    function deleteRow(r) {
+      var i = r.parentNode.parentNode.rowIndex;
+      document.getElementsByTagName("table").deleteRow(i);
+    }
     var row = table.insertRow(1);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
@@ -70,8 +76,12 @@ function createTable(data) {
     cell3.innerHTML = `${lname}`;
     cell4.innerHTML = `${sd.email}`;
     cell5.innerHTML = `${sd.department}`;
-    cell6.innerHTML = `<button id= "delete-btn" style="background-color:red ; color: white;font-size: medium; border-radius:5px ;padding:5px;">Delete</button>`
-    table.append(row)
+    cell6.innerHTML = `<button class= "dynamic-btn" style="background-color: red;color: white; padding: 5px 10px; border-radius: 10px; border:  solid white">delete</button>`;
+    console.log(cell6.firstChild.classList.contains("dynamic-btn"));
+   cell6.firstChild.addEventListener("click",(e)=>{
+      e.target.parentNode.parentNode.remove();
+   })
+    
   });
 }
 let unique = new Set();
